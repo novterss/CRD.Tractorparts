@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - หน้าที่คุณค้นหาไม่พบ | CRD.TractorParts</title>
+    <meta name="description" content="ขออภัย ไม่พบหน้าที่คุณค้นหา กรุณากลับไปหน้าหลักหรือติดต่อเรา">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8e3d3 100%);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .error-content {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        .error-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .error-404 {
+            font-size: 120px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: 28px;
+            color: var(--text-dark);
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .error-desc {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .error-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .error-btn {
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .error-btn.primary {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            color: white;
+        }
+
+        .error-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .error-btn.secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .error-btn.secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <img src="logo.png" alt="CRD.TractorParts" class="error-logo">
+            <h1 class="error-404">404</h1>
+            <h2 class="error-title" data-th="หน้าที่คุณค้นหาไม่พบ" data-en="Page Not Found">หน้าที่คุณค้นหาไม่พบ</h2>
+            <p class="error-desc" data-th="ขออภัย เราไม่พบหน้าที่คุณกำลังมองหา หน้านี้อาจถูกย้ายหรือลบไปแล้ว"
+                data-en="Sorry, we couldn't find the page you're looking for. It may have been moved or deleted.">
+                ขออภัย เราไม่พบหน้าที่คุณกำลังมองหา<br>หน้านี้อาจถูกย้ายหรือลบไปแล้ว
+            </p>
+            <div class="error-buttons">
+                <a href="index.html" class="error-btn primary">
+                    🏠 <span data-th="กลับหน้าหลัก" data-en="Back to Home">กลับหน้าหลัก</span>
+                </a>
+                <a href="contact.html" class="error-btn secondary">
+                    📞 <span data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="th">TH</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
