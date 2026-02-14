@@ -4,6 +4,31 @@
     box-sizing: border-box;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fffbeb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f59e0b, #d97706);
+    border-radius: 6px;
+    border: 3px solid #fffbeb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #d97706, #b45309);
+}
+
+/* Custom Selection */
+::selection {
+    background: #f59e0b;
+    color: white;
+}
+
 :root {
     --primary-color: #f59e0b;
     --secondary-color: #fbbf24;
@@ -67,7 +92,7 @@ body {
 
 /* Header */
 .header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05);
     position: sticky;
@@ -1541,36 +1566,8 @@ html {
     .faq-grid {
         grid-template-columns: 1fr;
     }
-}The AT command has been deprecated. Please use schtasks.exe instead.
+}
 
-Invalid command.
-
-The AT command schedules commands and programs to run on a computer at      
-a specified time and date. The Schedule service must be running to use      
-the AT command.
-                                                           
-AT [\\computername] [ [id] [/DELETE] | /DELETE [/YES]]                    
-AT [\\computername] time [/INTERACTIVE]
-    [ /EVERY:date[,...] | /NEXT:date[,...]] "command"
-
-\\computername     Specifies a remote computer. Commands are scheduled on the
-                   local computer if this parameter is omitted.             
-id                 Is an identification number assigned to a scheduled      
-                   command.                                                 
-/delete            Cancels a scheduled command. If id is omitted, all the
-                   scheduled commands on the computer are canceled.
-/yes               Used with cancel all jobs command when no further
-                   confirmation is desired.
-time               Specifies the time when command is to run.
-/interactive       Allows the job to interact with the desktop of the user   
-                   who is logged on at the time the job runs.
-/every:date[,...]  Runs the command on each specified day(s) of the week or
-                   month. If date is omitted, the current day of the month
-                   is assumed.                                              
-/next:date[,...]   Runs the specified command on the next occurrence of the
-                   day (for example, next Thursday).  If date is omitted, the
-                   current day of the month is assumed.
-"command"          Is the Windows NT command, or batch program to be run.
 
 /* ========================================
    Advanced Features CSS
@@ -1608,7 +1605,8 @@ time               Specifies the time when command is to run.
     user-select: none;
 }
 
-input, textarea {
+input,
+textarea {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
@@ -1650,14 +1648,29 @@ input, textarea {
 }
 
 @keyframes logoSpin {
-    0% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.1); }
-    100% { transform: rotate(360deg) scale(1); }
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* ========================================
@@ -1696,7 +1709,8 @@ input, textarea {
     user-select: none;
 }
 
-input, textarea {
+input,
+textarea {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
@@ -1738,14 +1752,29 @@ input, textarea {
 }
 
 @keyframes logoSpin {
-    0% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.1); }
-    100% { transform: rotate(360deg) scale(1); }
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* Gallery Modal */
@@ -1783,15 +1812,22 @@ input, textarea {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
     animation: gradientShift 15s ease infinite;
 }
 
 @keyframes gradientShift {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
 }
 
 .hero-decoration {
@@ -1800,7 +1836,7 @@ input, textarea {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
         radial-gradient(2px 2px at 20% 30%, rgba(245, 158, 11, 0.3), transparent),
         radial-gradient(2px 2px at 60% 70%, rgba(251, 191, 36, 0.2), transparent);
     background-size: 200px 200px, 300px 300px;
@@ -1809,8 +1845,13 @@ input, textarea {
 }
 
 @keyframes sparkle {
-    0% { background-position: 0 0, 0 0; }
-    100% { background-position: 200px 200px, -300px 300px; }
+    0% {
+        background-position: 0 0, 0 0;
+    }
+
+    100% {
+        background-position: 200px 200px, -300px 300px;
+    }
 }
 
 .hero-content {
@@ -1827,6 +1868,7 @@ input, textarea {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1865,8 +1907,13 @@ input, textarea {
 }
 
 @keyframes shimmer {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
 }
 
 .hero-subtitle {
@@ -1944,8 +1991,15 @@ input, textarea {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .cta-icon {
@@ -1994,32 +2048,32 @@ input, textarea {
     .hero {
         padding: 80px 0 60px !important;
     }
-    
+
     .hero-title {
         font-size: 2.4rem !important;
     }
-    
+
     .hero-subtitle {
         font-size: 1.15rem !important;
     }
-    
+
     .hero-cta-group {
         flex-direction: column;
         align-items: stretch;
         gap: 15px;
     }
-    
+
     .hero-cta {
         justify-content: center;
         padding: 18px 35px;
     }
-    
+
     .hero-trust-badges {
         flex-direction: column;
         align-items: center;
         gap: 15px;
     }
-    
+
     .trust-badge {
         font-size: 0.95rem;
     }
@@ -2110,9 +2164,179 @@ input, textarea {
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .testimonial-card {
         padding: 25px;
     }
 }
 
+/* =========================================
+   Knowledge Section Styles
+   ========================================= */
+.knowledge-section {
+    background: var(--bg-light);
+    padding: 80px 0;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 20px 5px;
+    /* Add padding to prevent shadow clipping */
+}
+
+.article-card {
+    background: var(--bg-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(245, 158, 11, 0.1);
+    /* Subtle border */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.article-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    z-index: 10;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(245, 158, 11, 0.3),
+        0 0 30px rgba(245, 158, 11, 0.15);
+    /* Glow effect */
+}
+
+.article-card:hover::before {
+    transform: scaleX(1);
+}
+
+.article-image {
+    width: 100%;
+    height: 240px;
+    /* Taller image */
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-image {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+.article-content {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-date {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.article-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.article-card:hover .article-title {
+    color: var(--primary-color);
+}
+
+.article-excerpt {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+/* Bullet points in article card */
+.article-content ul {
+    margin-top: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.article-content ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.article-content ul li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.read-more-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Coming Soon Placeholder Style */
+.article-card .placeholder-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .placeholder-icon {
+    transform: rotate(180deg) scale(1.2);
+}
