@@ -1,7 +1,5 @@
-// Current language state
-let currentLang = 'th';
 
-// Language content
+let currentLang = 'th';
 const content = {
     th: {},
     en: {}
@@ -71,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function switchLanguage(lang) {
     currentLang = lang;
 
-    // Update active button
     const langButtons = document.querySelectorAll('.lang-btn');
     langButtons.forEach(btn => {
         btn.classList.remove('active');
@@ -80,7 +77,6 @@ function switchLanguage(lang) {
         }
     });
 
-    // Update all elements with translation attributes
     const elements = document.querySelectorAll('[data-th][data-en]');
     elements.forEach(element => {
         const text = element.getAttribute('data-' + lang);
@@ -89,11 +85,9 @@ function switchLanguage(lang) {
         }
     });
 
-    // Save language preference
     localStorage.setItem('preferredLanguage', lang);
 }
 
-// Load saved language preference
 window.addEventListener('load', function () {
     const savedLang = localStorage.getItem('preferredLanguage');
     if (savedLang && savedLang !== 'th') {
@@ -101,7 +95,6 @@ window.addEventListener('load', function () {
     }
 });
 
-// Add intersection observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -116,7 +109,6 @@ const observer = new IntersectionObserver(function (entries) {
     });
 }, observerOptions);
 
-// Observe animated elements
 document.addEventListener('DOMContentLoaded', function () {
     const animatedElements = document.querySelectorAll('.part-card, .delivery-feature, .contact-item');
     animatedElements.forEach(el => {
@@ -126,10 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(el);
     });
 
-    // Back to top button functionality
     const backToTopBtn = document.getElementById('backToTop');
     if (backToTopBtn) {
-        // Show/hide button based on scroll position
         window.addEventListener('scroll', function () {
             if (window.pageYOffset > 300) {
                 backToTopBtn.classList.add('show');
@@ -138,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Scroll to top when clicked
         backToTopBtn.addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
@@ -148,11 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ========================================
 // Content Protection
-// ========================================
-
-// Disable right-click
 document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
     showProtectionMessage();
@@ -204,7 +189,6 @@ document.addEventListener('dragstart', function (e) {
 
 // Show protection message
 function showProtectionMessage() {
-    // Don't show multiple times
     if (document.querySelector('.protection-toast')) return;
 
     const toast = document.createElement('div');
@@ -222,10 +206,7 @@ function showProtectionMessage() {
     }, 2000);
 }
 
-// ========================================
 // Page Loader
-// ========================================
-
 window.addEventListener('load', function () {
     const loader = document.querySelector('.page-loader');
     if (loader) {
